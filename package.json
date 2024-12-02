@@ -1,0 +1,19 @@
+{
+  "name": "twitter-joke-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "author": "0z-cryptik",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tsx": "^4.19.2"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
+  }
+}
