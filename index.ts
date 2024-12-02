@@ -1,14 +1,6 @@
-import { config } from "dotenv";
-import { twitterClient } from "./twitter_client";
+import { fetchAndPost } from "./fucntions/fetchAndPost";
+import { CronJob } from "cron";
 
-config();
+const job = new CronJob("0 */8 * * *", fetchAndPost);
 
-const tweet = async () => {
-  try {
-    await twitterClient.v2.tweet("Hello world");
-  } catch (e) {
-    console.error(e);
-  }
-};
-
-tweet();
+job.start();
