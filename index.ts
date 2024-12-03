@@ -1,6 +1,14 @@
-import { fetchAndPost } from "./fucntions/fetchAndPost.js";
-import { CronJob } from "cron";
+import { fetchAndPost } from "./fucntions/fetchAndPost";
+import { VercelResponse } from '@vercel/node';
 
-const job = new CronJob("*/10 * * * *", fetchAndPost);
+const handler = async (_, res: VercelResponse) => {
+  try {
+    await fetchAndPost();
+    res.status(200).send("Bot executed successfully!");
+  } catch (error) {
+    console.error("Error executing bot:", error);
+    res.status(500).send("Bot execution failed.");
+  }
+};
 
-job.start();
+export default handler;
