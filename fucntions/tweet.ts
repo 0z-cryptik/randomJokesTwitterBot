@@ -34,8 +34,8 @@ export const tweet = async (tweetText: string) => {
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(`Error posting tweet: ${errorData}`);
+      const errorData: Error = await response.json();
+      throw new Error(`Error posting tweet: ${errorData.message}`);
     }
 
     const responseData = await response.json();
