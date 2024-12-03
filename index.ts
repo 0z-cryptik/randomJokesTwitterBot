@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.get("/", async (_, res: Response) => {
   try {
-    await fetchAndPost();
+    fetchAndPost();
     res.sendStatus(200);
   } catch (e) {
     console.error(e);
