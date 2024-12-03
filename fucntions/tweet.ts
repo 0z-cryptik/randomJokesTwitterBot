@@ -10,16 +10,12 @@ const accessTokenSecret = process.env.ACCESS_SECRET;
 
 export const tweet = async (tweetText: string) => {
   try {
-    const data = new FormData();
-    data.append("status", tweetText);
-
     const requestData = {
-      url: API_URL,
-      method: "POST"
+      text: tweetText
     };
 
     const authHeader = myOauth.toHeader(
-      myOauth.authorize(requestData, {
+      myOauth.authorize({url: API_URL, method: "POST"}, {
         key: accessToken,
         secret: accessTokenSecret
       })
@@ -28,9 +24,10 @@ export const tweet = async (tweetText: string) => {
     const response = await fetch(API_URL, {
       method: "POST",
       headers: {
-        ...authHeader
+        ...authHeader,
+        "Content-Type": "application/json"
       },
-      body: data
+      body: JSON.stringify(requestData)
     });
 
     if (!response.ok) {
