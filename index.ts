@@ -9,9 +9,9 @@ const port = process.env.PORT;
 
 app.use(express.json());
 
-app.get("/", (_, res: Response) => {
+app.get("/", async (_, res: Response) => {
   try {
-    fetchAndPost();
+    await fetchAndPost();
     res.sendStatus(200);
   } catch (e) {
     console.error(e);
