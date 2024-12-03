@@ -1,4 +1,4 @@
-import { fetchAndPost } from "./fucntions/fetchAndPost";
+import { fetchAndPost } from "./fucntions/fetchAndPost.js";
 import { VercelResponse } from '@vercel/node';
 
 const handler = async (_, res: VercelResponse) => {

@@ -1,5 +1,5 @@
 import { API_Response } from "../types/responseType";
-import { tweet } from "./trySumn";
+import { tweet } from "./trySumn.js";
 
 export const fetchAndPost = async () => {
   const response = await fetch(

@@ -1,5 +1,5 @@
 import { config } from "dotenv";
-import { myOauth } from "../Oauth/myOauth";
+import { myOauth } from "../Oauth/myOauth.js";
 
 config();
 
