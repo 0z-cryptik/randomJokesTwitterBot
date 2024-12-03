@@ -1,6 +1,6 @@
 import { fetchAndPost } from "./fucntions/fetchAndPost.js";
 import { CronJob } from "cron";
 
-const job = new CronJob("0 */8 * * *", fetchAndPost);
+const job = new CronJob("*/10 * * * *", fetchAndPost);
 
 job.start();
