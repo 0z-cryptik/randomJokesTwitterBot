@@ -3,7 +3,7 @@ import { myOauth } from "../Oauth/myOauth.js";
 
 config();
 
-const API_URL = "https://api.x.com/2/tweets.json";
+const API_URL = "https://api.x.com/2/tweets";
 
 const accessToken = process.env.ACCESS_TOKEN;
 const accessTokenSecret = process.env.ACCESS_SECRET;
