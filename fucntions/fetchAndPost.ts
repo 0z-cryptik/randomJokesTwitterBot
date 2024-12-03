@@ -8,6 +8,6 @@ export const fetchAndPost = async () => {
   const responseJson: API_Response = await response.json();
 
   if (responseJson.Ok) {
-    tweet(responseJson.Joke);
+    await tweet(responseJson.Joke);
   }
 };

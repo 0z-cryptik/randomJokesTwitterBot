@@ -15,10 +15,13 @@ export const tweet = async (tweetText: string) => {
     };
 
     const authHeader = myOauth.toHeader(
-      myOauth.authorize({url: API_URL, method: "POST"}, {
-        key: accessToken,
-        secret: accessTokenSecret
-      })
+      myOauth.authorize(
+        { url: API_URL, method: "POST" },
+        {
+          key: accessToken,
+          secret: accessTokenSecret
+        }
+      )
     );
 
     const response = await fetch(API_URL, {
@@ -36,7 +39,7 @@ export const tweet = async (tweetText: string) => {
     }
 
     const responseData = await response.json();
-    console.log("Tweet posted successfully:", responseData);
+    console.info("Tweet posted successfully", responseData);
   } catch (error) {
     console.error("Unexpected error:", error);
   }
