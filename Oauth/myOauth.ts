@@ -6,8 +6,6 @@ config();
 
 const consumerKey = process.env.API_KEY;
 const consumerSecret = process.env.API_SECRET;
-const accessToken = process.env.ACCESS_TOKEN;
-const accessTokenSecret = process.env.ACCESS_SECRET;
 
 export const myOauth = new OAuth({
   consumer: { key: consumerKey, secret: consumerSecret },
